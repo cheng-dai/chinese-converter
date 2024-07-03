@@ -1,5 +1,6 @@
 import { useState } from "react";
 import * as OpenCC from "opencc-js";
+import Footer from "./conponents/Footer";
 
 const App = () => {
   const [text, setText] = useState("");
@@ -14,6 +15,7 @@ const App = () => {
         className="border-2 border-black/20 rounded-md w-full h-[30vh] p-4"
       />
       <pre>{converter(text)}</pre>
+      <Footer />
     </div>
   );
 };
