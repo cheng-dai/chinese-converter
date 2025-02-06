@@ -10,8 +10,8 @@ const App = () => {
     : OpenCC.Converter({ from: "tw", to: "cn" });
 
   return (
-    <div className="min-h-screen">
-      <main className="p-4">
+    <div className="min-h-screen dark:bg-black/80 dark:text-white/90">
+      <main className="p-4 flex flex-col gap-4 items-center">
         <div className="flex justify-center items-center gap-4">
           <h1 className="text-xl font-semibold text-center py-4">
             {toTraditional ? "简体" : "繁體"}
@@ -36,15 +36,19 @@ const App = () => {
             {toTraditional ? "繁體" : "简体"}
           </h1>
         </div>
-        <textarea
-          value={text}
-          placeholder={
-            toTraditional ? "请输入要转换的文字" : "請輸入要轉換的文字"
-          }
-          onChange={(e) => setText(e.target.value)}
-          className="border-2 border-black/20 rounded-md w-full h-[30vh] p-4 focus:outline-none  "
-        />
-        <pre>{converter(text)}</pre>
+        <div className="w-full md:w-1/2 flex flex-col gap-4  ">
+          <textarea
+            value={text}
+            placeholder={
+              toTraditional ? "请输入要转换的文字" : "請輸入要轉換的文字"
+            }
+            onChange={(e) => setText(e.target.value)}
+            className="border-2 border-black/20 rounded-md h-[30vh] p-4 focus:outline-none  dark:bg-black/40 dark:text-white/90"
+          />
+          {text ? (
+            <div className="border-2 p-4 rounded-md">{converter(text)}</div>
+          ) : null}
+        </div>
       </main>
 
       <Footer />
