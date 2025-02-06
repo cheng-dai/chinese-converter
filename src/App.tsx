@@ -10,7 +10,7 @@ const App = () => {
     : OpenCC.Converter({ from: "tw", to: "cn" });
 
   return (
-    <div className="min-h-screen dark:bg-black/80 dark:text-white/90">
+    <div className="min-h-[100dvh] dark:bg-black/80 dark:text-white/90">
       <main className="p-4 flex flex-col gap-4 items-center">
         <div className="flex justify-center items-center gap-4">
           <h1 className="text-xl font-semibold text-center py-4">
@@ -36,7 +36,7 @@ const App = () => {
             {toTraditional ? "繁體" : "简体"}
           </h1>
         </div>
-        <div className="w-full md:w-1/2 flex flex-col gap-4  ">
+        <div className="w-full md:w-1/2 flex flex-col gap-4">
           <textarea
             value={text}
             placeholder={
